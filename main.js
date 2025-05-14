@@ -43,7 +43,7 @@ map.on("load", () => {
         'change',
         (e) => {
             const year = e.target.value
-            map.getSource('cities').setData(`http://127.0.0.1:5000/cities/${year}`)
+            map.getSource('cities').setData(`https://sambuk.pythonanywhere.com/cities/${year}`)
         }
     )
 
