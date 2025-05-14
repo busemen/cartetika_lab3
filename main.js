@@ -8,7 +8,7 @@ const map = new maplibregl.Map({
 map.on("load", () => {
     map.addSource("cities", {
         type: "geojson",
-        data: 'http://127.0.0.1:5000/cities/2018'
+        data: 'https://sambuk.pythonanywhere.com/cities/2018'
     })
 
     map.addLayer({
@@ -49,7 +49,7 @@ map.on("load", () => {
 
     map.on('click', 'cities-layer', (e) => {
         console.log(e.features[0].properties.id)
-        fetch(`http://127.0.0.1:5000/city/${e.features[0].properties.id}`)
+        fetch(`https://sambuk.pythonanywhere.com/city/${e.features[0].properties.id}`)
             .then(response => response.json())
             .then(cityProperties => {
                 console.log(cityProperties)
